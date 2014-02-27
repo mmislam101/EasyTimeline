@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6ACCFB618BF268C00C05868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB518BF268C00C05868 /* Foundation.framework */; };
+		B6ACCFB818BF268C00C05868 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB718BF268C00C05868 /* CoreGraphics.framework */; };
+		B6ACCFBA18BF268C00C05868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB918BF268C00C05868 /* UIKit.framework */; };
+		B6ACCFC018BF268C00C05868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFBE18BF268C00C05868 /* InfoPlist.strings */; };
+		B6ACCFC218BF268C00C05868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFC118BF268C00C05868 /* main.m */; };
+		B6ACCFC618BF268C00C05868 /* ETAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFC518BF268C00C05868 /* ETAppDelegate.m */; };
+		B6ACCFC918BF268C00C05868 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFC718BF268C00C05868 /* Main_iPhone.storyboard */; };
+		B6ACCFCC18BF268C00C05868 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFCA18BF268C00C05868 /* Main_iPad.storyboard */; };
+		B6ACCFCF18BF268C00C05868 /* ETViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFCE18BF268C00C05868 /* ETViewController.m */; };
+		B6ACCFD118BF268C00C05868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFD018BF268C00C05868 /* Images.xcassets */; };
+		B6ACCFD818BF268C00C05868 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFD718BF268C00C05868 /* XCTest.framework */; };
+		B6ACCFD918BF268C00C05868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB518BF268C00C05868 /* Foundation.framework */; };
+		B6ACCFDA18BF268C00C05868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB918BF268C00C05868 /* UIKit.framework */; };
+		B6ACCFE218BF268C00C05868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFE018BF268C00C05868 /* InfoPlist.strings */; };
+		B6ACCFE418BF268C00C05868 /* EasyTimelineExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFE318BF268C00C05868 /* EasyTimelineExampleTests.m */; };
+		B6ACCFF018BF269E00C05868 /* EasyTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFEF18BF269E00C05868 /* EasyTimeline.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6ACCFDB18BF268C00C05868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6ACCFAA18BF268B00C05868 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6ACCFB118BF268B00C05868;
+			remoteInfo = EasyTimelineExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6ACCFB218BF268C00C05868 /* EasyTimelineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyTimelineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6ACCFB518BF268C00C05868 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6ACCFB718BF268C00C05868 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B6ACCFB918BF268C00C05868 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B6ACCFBD18BF268C00C05868 /* EasyTimelineExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyTimelineExample-Info.plist"; sourceTree = "<group>"; };
+		B6ACCFBF18BF268C00C05868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6ACCFC118BF268C00C05868 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6ACCFC318BF268C00C05868 /* EasyTimelineExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyTimelineExample-Prefix.pch"; sourceTree = "<group>"; };
+		B6ACCFC418BF268C00C05868 /* ETAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAppDelegate.h; sourceTree = "<group>"; };
+		B6ACCFC518BF268C00C05868 /* ETAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAppDelegate.m; sourceTree = "<group>"; };
+		B6ACCFC818BF268C00C05868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		B6ACCFCB18BF268C00C05868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		B6ACCFCD18BF268C00C05868 /* ETViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETViewController.h; sourceTree = "<group>"; };
+		B6ACCFCE18BF268C00C05868 /* ETViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETViewController.m; sourceTree = "<group>"; };
+		B6ACCFD018BF268C00C05868 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B6ACCFD618BF268C00C05868 /* EasyTimelineExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyTimelineExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6ACCFD718BF268C00C05868 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B6ACCFDF18BF268C00C05868 /* EasyTimelineExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyTimelineExampleTests-Info.plist"; sourceTree = "<group>"; };
+		B6ACCFE118BF268C00C05868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6ACCFE318BF268C00C05868 /* EasyTimelineExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyTimelineExampleTests.m; sourceTree = "<group>"; };
+		B6ACCFEE18BF269E00C05868 /* EasyTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyTimeline.h; sourceTree = "<group>"; };
+		B6ACCFEF18BF269E00C05868 /* EasyTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyTimeline.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6ACCFAF18BF268B00C05868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6ACCFB818BF268C00C05868 /* CoreGraphics.framework in Frameworks */,
+				B6ACCFBA18BF268C00C05868 /* UIKit.framework in Frameworks */,
+				B6ACCFB618BF268C00C05868 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6ACCFD318BF268C00C05868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6ACCFD818BF268C00C05868 /* XCTest.framework in Frameworks */,
+				B6ACCFDA18BF268C00C05868 /* UIKit.framework in Frameworks */,
+				B6ACCFD918BF268C00C05868 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6ACCFA918BF268B00C05868 = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFBB18BF268C00C05868 /* EasyTimelineExample */,
+				B6ACCFDD18BF268C00C05868 /* EasyTimelineExampleTests */,
+				B6ACCFB418BF268C00C05868 /* Frameworks */,
+				B6ACCFB318BF268C00C05868 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6ACCFB318BF268C00C05868 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFB218BF268C00C05868 /* EasyTimelineExample.app */,
+				B6ACCFD618BF268C00C05868 /* EasyTimelineExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6ACCFB418BF268C00C05868 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFB518BF268C00C05868 /* Foundation.framework */,
+				B6ACCFB718BF268C00C05868 /* CoreGraphics.framework */,
+				B6ACCFB918BF268C00C05868 /* UIKit.framework */,
+				B6ACCFD718BF268C00C05868 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6ACCFBB18BF268C00C05868 /* EasyTimelineExample */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFED18BF269E00C05868 /* EasyTimeline */,
+				B6ACCFC418BF268C00C05868 /* ETAppDelegate.h */,
+				B6ACCFC518BF268C00C05868 /* ETAppDelegate.m */,
+				B6ACCFC718BF268C00C05868 /* Main_iPhone.storyboard */,
+				B6ACCFCA18BF268C00C05868 /* Main_iPad.storyboard */,
+				B6ACCFCD18BF268C00C05868 /* ETViewController.h */,
+				B6ACCFCE18BF268C00C05868 /* ETViewController.m */,
+				B6ACCFD018BF268C00C05868 /* Images.xcassets */,
+				B6ACCFBC18BF268C00C05868 /* Supporting Files */,
+			);
+			path = EasyTimelineExample;
+			sourceTree = "<group>";
+		};
+		B6ACCFBC18BF268C00C05868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFBD18BF268C00C05868 /* EasyTimelineExample-Info.plist */,
+				B6ACCFBE18BF268C00C05868 /* InfoPlist.strings */,
+				B6ACCFC118BF268C00C05868 /* main.m */,
+				B6ACCFC318BF268C00C05868 /* EasyTimelineExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6ACCFDD18BF268C00C05868 /* EasyTimelineExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFE318BF268C00C05868 /* EasyTimelineExampleTests.m */,
+				B6ACCFDE18BF268C00C05868 /* Supporting Files */,
+			);
+			path = EasyTimelineExampleTests;
+			sourceTree = "<group>";
+		};
+		B6ACCFDE18BF268C00C05868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFDF18BF268C00C05868 /* EasyTimelineExampleTests-Info.plist */,
+				B6ACCFE018BF268C00C05868 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6ACCFED18BF269E00C05868 /* EasyTimeline */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFEE18BF269E00C05868 /* EasyTimeline.h */,
+				B6ACCFEF18BF269E00C05868 /* EasyTimeline.m */,
+			);
+			name = EasyTimeline;
+			path = ../../EasyTimeline;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6ACCFB118BF268B00C05868 /* EasyTimelineExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6ACCFE718BF268C00C05868 /* Build configuration list for PBXNativeTarget "EasyTimelineExample" */;
+			buildPhases = (
+				B6ACCFAE18BF268B00C05868 /* Sources */,
+				B6ACCFAF18BF268B00C05868 /* Frameworks */,
+				B6ACCFB018BF268B00C05868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyTimelineExample;
+			productName = EasyTimelineExample;
+			productReference = B6ACCFB218BF268C00C05868 /* EasyTimelineExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6ACCFD518BF268C00C05868 /* EasyTimelineExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6ACCFEA18BF268C00C05868 /* Build configuration list for PBXNativeTarget "EasyTimelineExampleTests" */;
+			buildPhases = (
+				B6ACCFD218BF268C00C05868 /* Sources */,
+				B6ACCFD318BF268C00C05868 /* Frameworks */,
+				B6ACCFD418BF268C00C05868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6ACCFDC18BF268C00C05868 /* PBXTargetDependency */,
+			);
+			name = EasyTimelineExampleTests;
+			productName = EasyTimelineExampleTests;
+			productReference = B6ACCFD618BF268C00C05868 /* EasyTimelineExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6ACCFAA18BF268B00C05868 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ET;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "KSI Technology";
+				TargetAttributes = {
+					B6ACCFD518BF268C00C05868 = {
+						TestTargetID = B6ACCFB118BF268B00C05868;
+					};
+				};
+			};
+			buildConfigurationList = B6ACCFAD18BF268B00C05868 /* Build configuration list for PBXProject "EasyTimelineExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6ACCFA918BF268B00C05868;
+			productRefGroup = B6ACCFB318BF268C00C05868 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6ACCFB118BF268B00C05868 /* EasyTimelineExample */,
+				B6ACCFD518BF268C00C05868 /* EasyTimelineExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6ACCFB018BF268B00C05868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6ACCFCC18BF268C00C05868 /* Main_iPad.storyboard in Resources */,
+				B6ACCFD118BF268C00C05868 /* Images.xcassets in Resources */,
+				B6ACCFC918BF268C00C05868 /* Main_iPhone.storyboard in Resources */,
+				B6ACCFC018BF268C00C05868 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6ACCFD418BF268C00C05868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6ACCFE218BF268C00C05868 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6ACCFAE18BF268B00C05868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6ACCFCF18BF268C00C05868 /* ETViewController.m in Sources */,
+				B6ACCFC218BF268C00C05868 /* main.m in Sources */,
+				B6ACCFF018BF269E00C05868 /* EasyTimeline.m in Sources */,
+				B6ACCFC618BF268C00C05868 /* ETAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6ACCFD218BF268C00C05868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6ACCFE418BF268C00C05868 /* EasyTimelineExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6ACCFDC18BF268C00C05868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6ACCFB118BF268B00C05868 /* EasyTimelineExample */;
+			targetProxy = B6ACCFDB18BF268C00C05868 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6ACCFBE18BF268C00C05868 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6ACCFBF18BF268C00C05868 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B6ACCFC718BF268C00C05868 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6ACCFC818BF268C00C05868 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		B6ACCFCA18BF268C00C05868 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6ACCFCB18BF268C00C05868 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		B6ACCFE018BF268C00C05868 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6ACCFE118BF268C00C05868 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6ACCFE518BF268C00C05868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6ACCFE618BF268C00C05868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6ACCFE818BF268C00C05868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyTimelineExample/EasyTimelineExample-Prefix.pch";
+				INFOPLIST_FILE = "EasyTimelineExample/EasyTimelineExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B6ACCFE918BF268C00C05868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyTimelineExample/EasyTimelineExample-Prefix.pch";
+				INFOPLIST_FILE = "EasyTimelineExample/EasyTimelineExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B6ACCFEB18BF268C00C05868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EasyTimelineExample.app/EasyTimelineExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyTimelineExample/EasyTimelineExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EasyTimelineExampleTests/EasyTimelineExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B6ACCFEC18BF268C00C05868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EasyTimelineExample.app/EasyTimelineExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EasyTimelineExample/EasyTimelineExample-Prefix.pch";
+				INFOPLIST_FILE = "EasyTimelineExampleTests/EasyTimelineExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6ACCFAD18BF268B00C05868 /* Build configuration list for PBXProject "EasyTimelineExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6ACCFE518BF268C00C05868 /* Debug */,
+				B6ACCFE618BF268C00C05868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6ACCFE718BF268C00C05868 /* Build configuration list for PBXNativeTarget "EasyTimelineExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6ACCFE818BF268C00C05868 /* Debug */,
+				B6ACCFE918BF268C00C05868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B6ACCFEA18BF268C00C05868 /* Build configuration list for PBXNativeTarget "EasyTimelineExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6ACCFEB18BF268C00C05868 /* Debug */,
+				B6ACCFEC18BF268C00C05868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6ACCFAA18BF268B00C05868 /* Project object */;
+}
