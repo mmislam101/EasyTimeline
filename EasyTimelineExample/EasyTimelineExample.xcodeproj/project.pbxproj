@@ -13,8 +13,6 @@
 		B6ACCFC018BF268C00C05868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFBE18BF268C00C05868 /* InfoPlist.strings */; };
 		B6ACCFC218BF268C00C05868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFC118BF268C00C05868 /* main.m */; };
 		B6ACCFC618BF268C00C05868 /* ETAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFC518BF268C00C05868 /* ETAppDelegate.m */; };
-		B6ACCFC918BF268C00C05868 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFC718BF268C00C05868 /* Main_iPhone.storyboard */; };
-		B6ACCFCC18BF268C00C05868 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFCA18BF268C00C05868 /* Main_iPad.storyboard */; };
 		B6ACCFCF18BF268C00C05868 /* ETViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFCE18BF268C00C05868 /* ETViewController.m */; };
 		B6ACCFD118BF268C00C05868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFD018BF268C00C05868 /* Images.xcassets */; };
 		B6ACCFD818BF268C00C05868 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFD718BF268C00C05868 /* XCTest.framework */; };
@@ -23,6 +21,10 @@
 		B6ACCFE218BF268C00C05868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6ACCFE018BF268C00C05868 /* InfoPlist.strings */; };
 		B6ACCFE418BF268C00C05868 /* EasyTimelineExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFE318BF268C00C05868 /* EasyTimelineExampleTests.m */; };
 		B6ACCFF018BF269E00C05868 /* EasyTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFEF18BF269E00C05868 /* EasyTimeline.m */; };
+		B6ACCFF418C0459D00C05868 /* ETViewControllerExample.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFF318C0459D00C05868 /* ETViewControllerExample.m */; };
+		B6ACCFF718C0561A00C05868 /* ETViewControllerExampleTick.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFF618C0561A00C05868 /* ETViewControllerExampleTick.m */; };
+		B6ACCFFA18C0592900C05868 /* ETViewControllerExampleLoopTicks.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFF918C0592900C05868 /* ETViewControllerExampleLoopTicks.m */; };
+		B6ACCFFD18C05BBE00C05868 /* ETViewControllerExampleSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFFC18C05BBE00C05868 /* ETViewControllerExampleSpeed.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +48,6 @@
 		B6ACCFC318BF268C00C05868 /* EasyTimelineExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyTimelineExample-Prefix.pch"; sourceTree = "<group>"; };
 		B6ACCFC418BF268C00C05868 /* ETAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAppDelegate.h; sourceTree = "<group>"; };
 		B6ACCFC518BF268C00C05868 /* ETAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAppDelegate.m; sourceTree = "<group>"; };
-		B6ACCFC818BF268C00C05868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B6ACCFCB18BF268C00C05868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B6ACCFCD18BF268C00C05868 /* ETViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETViewController.h; sourceTree = "<group>"; };
 		B6ACCFCE18BF268C00C05868 /* ETViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETViewController.m; sourceTree = "<group>"; };
 		B6ACCFD018BF268C00C05868 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -58,6 +58,14 @@
 		B6ACCFE318BF268C00C05868 /* EasyTimelineExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyTimelineExampleTests.m; sourceTree = "<group>"; };
 		B6ACCFEE18BF269E00C05868 /* EasyTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyTimeline.h; sourceTree = "<group>"; };
 		B6ACCFEF18BF269E00C05868 /* EasyTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyTimeline.m; sourceTree = "<group>"; };
+		B6ACCFF218C0459D00C05868 /* ETViewControllerExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerExample.h; sourceTree = "<group>"; };
+		B6ACCFF318C0459D00C05868 /* ETViewControllerExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExample.m; sourceTree = "<group>"; };
+		B6ACCFF518C0561A00C05868 /* ETViewControllerExampleTick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerExampleTick.h; sourceTree = "<group>"; };
+		B6ACCFF618C0561A00C05868 /* ETViewControllerExampleTick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExampleTick.m; sourceTree = "<group>"; };
+		B6ACCFF818C0592900C05868 /* ETViewControllerExampleLoopTicks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerExampleLoopTicks.h; sourceTree = "<group>"; };
+		B6ACCFF918C0592900C05868 /* ETViewControllerExampleLoopTicks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExampleLoopTicks.m; sourceTree = "<group>"; };
+		B6ACCFFB18C05BBE00C05868 /* ETViewControllerExampleSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerExampleSpeed.h; sourceTree = "<group>"; };
+		B6ACCFFC18C05BBE00C05868 /* ETViewControllerExampleSpeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExampleSpeed.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +125,10 @@
 		B6ACCFBB18BF268C00C05868 /* EasyTimelineExample */ = {
 			isa = PBXGroup;
 			children = (
+				B6ACCFF118C0454A00C05868 /* ExampleControllers */,
 				B6ACCFED18BF269E00C05868 /* EasyTimeline */,
 				B6ACCFC418BF268C00C05868 /* ETAppDelegate.h */,
 				B6ACCFC518BF268C00C05868 /* ETAppDelegate.m */,
-				B6ACCFC718BF268C00C05868 /* Main_iPhone.storyboard */,
-				B6ACCFCA18BF268C00C05868 /* Main_iPad.storyboard */,
 				B6ACCFCD18BF268C00C05868 /* ETViewController.h */,
 				B6ACCFCE18BF268C00C05868 /* ETViewController.m */,
 				B6ACCFD018BF268C00C05868 /* Images.xcassets */,
@@ -167,6 +174,21 @@
 			);
 			name = EasyTimeline;
 			path = ../../EasyTimeline;
+			sourceTree = "<group>";
+		};
+		B6ACCFF118C0454A00C05868 /* ExampleControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B6ACCFF218C0459D00C05868 /* ETViewControllerExample.h */,
+				B6ACCFF318C0459D00C05868 /* ETViewControllerExample.m */,
+				B6ACCFF518C0561A00C05868 /* ETViewControllerExampleTick.h */,
+				B6ACCFF618C0561A00C05868 /* ETViewControllerExampleTick.m */,
+				B6ACCFF818C0592900C05868 /* ETViewControllerExampleLoopTicks.h */,
+				B6ACCFF918C0592900C05868 /* ETViewControllerExampleLoopTicks.m */,
+				B6ACCFFB18C05BBE00C05868 /* ETViewControllerExampleSpeed.h */,
+				B6ACCFFC18C05BBE00C05868 /* ETViewControllerExampleSpeed.m */,
+			);
+			path = ExampleControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6ACCFCC18BF268C00C05868 /* Main_iPad.storyboard in Resources */,
 				B6ACCFD118BF268C00C05868 /* Images.xcassets in Resources */,
-				B6ACCFC918BF268C00C05868 /* Main_iPhone.storyboard in Resources */,
 				B6ACCFC018BF268C00C05868 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +290,11 @@
 			files = (
 				B6ACCFCF18BF268C00C05868 /* ETViewController.m in Sources */,
 				B6ACCFC218BF268C00C05868 /* main.m in Sources */,
+				B6ACCFF418C0459D00C05868 /* ETViewControllerExample.m in Sources */,
+				B6ACCFF718C0561A00C05868 /* ETViewControllerExampleTick.m in Sources */,
 				B6ACCFF018BF269E00C05868 /* EasyTimeline.m in Sources */,
+				B6ACCFFA18C0592900C05868 /* ETViewControllerExampleLoopTicks.m in Sources */,
+				B6ACCFFD18C05BBE00C05868 /* ETViewControllerExampleSpeed.m in Sources */,
 				B6ACCFC618BF268C00C05868 /* ETAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,22 +324,6 @@
 				B6ACCFBF18BF268C00C05868 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B6ACCFC718BF268C00C05868 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6ACCFC818BF268C00C05868 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		B6ACCFCA18BF268C00C05868 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6ACCFCB18BF268C00C05868 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		B6ACCFE018BF268C00C05868 /* InfoPlist.strings */ = {
@@ -490,6 +498,7 @@
 				B6ACCFE918BF268C00C05868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6ACCFEA18BF268C00C05868 /* Build configuration list for PBXNativeTarget "EasyTimelineExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +507,7 @@
 				B6ACCFEC18BF268C00C05868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
