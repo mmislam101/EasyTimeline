@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EasyTimelineEvent.h"
 
 @class EasyTimeline;
 
@@ -14,24 +15,44 @@
 
 @optional
 
-- (void)tickAt:(CGFloat)time forTimeline:(EasyTimeline *)timeline;
+- (void)tickAt:(NSTimeInterval)time forTimeline:(EasyTimeline *)timeline;
 - (void)finishedTimeLine:(EasyTimeline *)timeline;
 
 @end
 
 @interface EasyTimeline : NSObject
+{
+	NSTimer *_mainTimer;
+	NSTimer *_tickTimer;
+
+	NSTimeInterval _startTime;
+
+	NSMutableArray *_events;
+	NSMutableArray *_eventTimers;
+	
+	__weak id <EasyTimelineDelegate> _delegate;
+}
+
+@property (weak, nonatomic) id <EasyTimelineDelegate> delegate;
 
 #pragma mark Easy Timeline Properties
 
-@property (nonatomic, assign) CGFloat duration;
+@property (nonatomic, assign) NSTimeInterval duration;
 @property (nonatomic, assign) BOOL willLoop; // Default to NO
-@property (nonatomic, assign) CGFloat tickPeriod; // This is the period (in seconds) in which tickFortimeline: will be called
-@property (nonatomic, assign) NSInteger speed; // speed is the x times the timeline will run at, default is 1
+@property (nonatomic, assign) NSTimeInterval tickPeriod; // This is the period (in seconds) in which tickFortimeline: will be called, this can be changed on the fly
+@property (nonatomic, readonly) NSArray *events;
+@property (nonatomic, readonly) NSTimeInterval currentTime;
 
 #pragma mark Easy Timeline Controllers
 
 - (void)start;
 - (void)pause;
-- (void)reset;
+- (void)stop;
+
+#pragma mark Easy Timeline Events
+
+// Adding or removing events while timeline is running won't work
+- (void)addEvent:(EasyTimelineEvent *)event;
+- (void)removeEvent:(EasyTimelineEvent *)event;
 
 @end

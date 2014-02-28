@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETViewController : UIViewController
+@interface ETViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
