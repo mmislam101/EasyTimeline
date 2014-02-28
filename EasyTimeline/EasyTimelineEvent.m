@@ -12,11 +12,11 @@
 
 + (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time WithCompletion:(completionBlock)completionBlock
 {
-	EasyTimelineEvent *event	= [self init];
+	EasyTimelineEvent *event	= [[EasyTimelineEvent alloc] init];
 	event.completionBlock		= completionBlock;
 	event.time					= time;
 
-	return completionBlock;
+	return event;
 }
 
 @end

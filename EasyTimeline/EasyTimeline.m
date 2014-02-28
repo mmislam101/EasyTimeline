@@ -43,30 +43,25 @@ events = _events;
 	_startTime	= [NSDate timeIntervalSinceReferenceDate];
 
 	// Do tick timer
-	if (_tickPeriod <= 0.0 || self.tickPeriod > self.duration)
-		return;
+	if (_tickPeriod > 0.0 && self.tickPeriod <= self.duration)
+	{
+		_tickTimer	= [NSTimer timerWithTimeInterval:self.tickPeriod target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 
-	_tickTimer	= [NSTimer timerWithTimeInterval:self.tickPeriod target:self selector:@selector(tick:) userInfo:nil repeats:YES];
-
-	[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSDefaultRunLoopMode];
+		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSDefaultRunLoopMode];
+	}
 
 	// Do timers for events
-	if (_events.count == 0)
-		return;
-
-	_eventTimers = [[NSMutableArray alloc] init];
-	for (EasyTimelineEvent *event in _events)
+	if (_events.count > 0)
 	{
-		NSTimer *eventTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
-															   target:self
-															 selector:@selector(runEvent:)
-															 userInfo:event repeats:NO];
-		[_eventTimers addObject:eventTimer];
-
-//		NSTimer *eventTimer = [NSTimer timerWithTimeInterval:event.time target:self selector:@selector(runEvent:) userInfo:event repeats:NO];
-//		[_eventTimers addObject:eventTimer];
-//
-//		[[NSRunLoop currentRunLoop] addTimer:eventTimer forMode:NSDefaultRunLoopMode];
+		_eventTimers = [[NSMutableArray alloc] init];
+		for (EasyTimelineEvent *event in _events)
+		{
+			NSTimer *eventTimer = [NSTimer scheduledTimerWithTimeInterval:event.time
+																   target:self
+																 selector:@selector(runEvent:)
+																 userInfo:event repeats:NO];
+			[_eventTimers addObject:eventTimer];
+		}
 	}
 }
 
@@ -121,7 +116,7 @@ events = _events;
 - (void)runEvent:(NSTimer *)timer
 {
 	EasyTimelineEvent *event = (EasyTimelineEvent *)timer.userInfo;
-
+	
 	if (event.completionBlock)
 		event.completionBlock(event, self);
 }
