@@ -46,7 +46,6 @@
 #pragma mark Easy Timeline Controllers
 
 - (void)start;
-- (void)pause;
 - (void)stop;
 
 #pragma mark Easy Timeline Events

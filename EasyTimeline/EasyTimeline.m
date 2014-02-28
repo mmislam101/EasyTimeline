@@ -65,11 +65,6 @@ events = _events;
 	}
 }
 
-- (void)pause
-{
-
-}
-
 - (void)stop
 {
 	[_mainTimer invalidate];
