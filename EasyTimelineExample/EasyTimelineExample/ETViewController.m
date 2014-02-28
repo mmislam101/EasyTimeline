@@ -12,6 +12,7 @@
 #import "ETViewControllerExampleLoopTicks.h"
 #import "ETViewControllerExampleSpeed.h"
 #import "ETViewControllerExampleEvents.h"
+#import "ETViewControllerExamplePause.h"
 
 #define tableCellReuse @"tableCellReuse"
 
@@ -49,7 +50,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,6 +82,9 @@
 
 		case 4:
 			cell.textLabel.text	= @"10s timeline with events";
+
+		case 5:
+			cell.textLabel.text	= @"10s timeline with pause";
 
 		default:
 			break;
@@ -116,6 +120,10 @@
 
 		case 4:
 			[self.navigationController pushViewController:[[ETViewControllerExampleEvents alloc] init] animated:YES];
+			break;
+
+		case 5:
+			[self.navigationController pushViewController:[[ETViewControllerExamplePause alloc] init] animated:YES];
 			break;
 
 		default:

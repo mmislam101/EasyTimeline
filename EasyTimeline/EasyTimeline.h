@@ -26,9 +26,12 @@
 	NSTimer *_tickTimer;
 
 	NSTimeInterval _startTime;
+	NSTimeInterval _pausedTime;
 
 	NSMutableArray *_events;
 	NSMutableArray *_eventTimers;
+
+	BOOL _isPaused;
 	
 	__weak id <EasyTimelineDelegate> _delegate;
 }
@@ -46,6 +49,8 @@
 #pragma mark Easy Timeline Controllers
 
 - (void)start;
+- (void)pause;
+- (void)resume;
 - (void)stop;
 
 #pragma mark Easy Timeline Events

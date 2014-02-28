@@ -27,6 +27,8 @@
 		B6ACCFFD18C05BBE00C05868 /* ETViewControllerExampleSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFFC18C05BBE00C05868 /* ETViewControllerExampleSpeed.m */; };
 		B6ACD00018C0622F00C05868 /* ETViewControllerExampleEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACCFFF18C0622F00C05868 /* ETViewControllerExampleEvents.m */; };
 		B6ACD00318C0626600C05868 /* EasyTimelineEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD00218C0626600C05868 /* EasyTimelineEvent.m */; };
+		B6ACD00618C07F6700C05868 /* NSTimer+EasyTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD00518C07F6700C05868 /* NSTimer+EasyTimeline.m */; };
+		B6ACD00918C0810800C05868 /* ETViewControllerExamplePause.m in Sources */ = {isa = PBXBuildFile; fileRef = B6ACD00818C0810800C05868 /* ETViewControllerExamplePause.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		B6ACCFFF18C0622F00C05868 /* ETViewControllerExampleEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExampleEvents.m; sourceTree = "<group>"; };
 		B6ACD00118C0626600C05868 /* EasyTimelineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyTimelineEvent.h; sourceTree = "<group>"; };
 		B6ACD00218C0626600C05868 /* EasyTimelineEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyTimelineEvent.m; sourceTree = "<group>"; };
+		B6ACD00418C07F6700C05868 /* NSTimer+EasyTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+EasyTimeline.h"; sourceTree = "<group>"; };
+		B6ACD00518C07F6700C05868 /* NSTimer+EasyTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+EasyTimeline.m"; sourceTree = "<group>"; };
+		B6ACD00718C0810800C05868 /* ETViewControllerExamplePause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerExamplePause.h; sourceTree = "<group>"; };
+		B6ACD00818C0810800C05868 /* ETViewControllerExamplePause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExamplePause.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,8 @@
 				B6ACCFEF18BF269E00C05868 /* EasyTimeline.m */,
 				B6ACD00118C0626600C05868 /* EasyTimelineEvent.h */,
 				B6ACD00218C0626600C05868 /* EasyTimelineEvent.m */,
+				B6ACD00418C07F6700C05868 /* NSTimer+EasyTimeline.h */,
+				B6ACD00518C07F6700C05868 /* NSTimer+EasyTimeline.m */,
 			);
 			name = EasyTimeline;
 			path = ../../EasyTimeline;
@@ -197,6 +205,8 @@
 				B6ACCFFC18C05BBE00C05868 /* ETViewControllerExampleSpeed.m */,
 				B6ACCFFE18C0622F00C05868 /* ETViewControllerExampleEvents.h */,
 				B6ACCFFF18C0622F00C05868 /* ETViewControllerExampleEvents.m */,
+				B6ACD00718C0810800C05868 /* ETViewControllerExamplePause.h */,
+				B6ACD00818C0810800C05868 /* ETViewControllerExamplePause.m */,
 			);
 			path = ExampleControllers;
 			sourceTree = "<group>";
@@ -299,7 +309,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6ACCFCF18BF268C00C05868 /* ETViewController.m in Sources */,
+				B6ACD00618C07F6700C05868 /* NSTimer+EasyTimeline.m in Sources */,
 				B6ACD00318C0626600C05868 /* EasyTimelineEvent.m in Sources */,
+				B6ACD00918C0810800C05868 /* ETViewControllerExamplePause.m in Sources */,
 				B6ACCFC218BF268C00C05868 /* main.m in Sources */,
 				B6ACD00018C0622F00C05868 /* ETViewControllerExampleEvents.m in Sources */,
 				B6ACCFF418C0459D00C05868 /* ETViewControllerExample.m in Sources */,

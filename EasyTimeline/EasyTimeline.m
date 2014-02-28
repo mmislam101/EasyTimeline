@@ -7,6 +7,7 @@
 //
 
 #import "EasyTimeline.h"
+#import "NSTimer+EasyTimeline.h"
 
 @implementation EasyTimeline
 
@@ -21,6 +22,7 @@ events = _events;
 	self.willLoop	= NO;
 	_events			= [[NSMutableArray alloc] init];
 	_startTime		= 0;
+	_isPaused		= NO;
 
     return self;
 }
@@ -65,6 +67,37 @@ events = _events;
 	}
 }
 
+- (void)pause
+{
+	if (_isPaused && _startTime > 0)
+		return;
+
+	_isPaused	= YES;
+
+	[_mainTimer pauseOrResume];
+	[_tickTimer pauseOrResume];
+
+	for (NSTimer *eventTimer in _eventTimers)
+		[eventTimer pauseOrResume];
+
+	_pausedTime	= [NSDate timeIntervalSinceReferenceDate];
+}
+
+- (void)resume
+{
+	if (!_isPaused)
+		return;
+
+	_isPaused	= NO;
+	_startTime	= _startTime + ([NSDate timeIntervalSinceReferenceDate] - _pausedTime);
+
+	[_mainTimer pauseOrResume];
+	[_tickTimer pauseOrResume];
+
+	for (NSTimer *eventTimer in _eventTimers)
+		[eventTimer pauseOrResume];
+}
+
 - (void)stop
 {
 	[_mainTimer invalidate];
@@ -77,6 +110,8 @@ events = _events;
 	_tickTimer	= nil;
 
 	_startTime	= 0;
+	_pausedTime	= 0;
+	_isPaused	= NO;
 }
 
 #pragma mark Easy Timeline Events
