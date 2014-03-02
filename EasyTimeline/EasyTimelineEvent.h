@@ -11,13 +11,13 @@
 @class EasyTimeline;
 @class EasyTimelineEvent;
 
-typedef void (^completionBlock)(EasyTimelineEvent *event, EasyTimeline *timeline);
+typedef void (^timelineEventBlock)(EasyTimelineEvent *event, EasyTimeline *timeline);
 
 @interface EasyTimelineEvent : NSObject
 
-@property (nonatomic, copy) completionBlock completionBlock;
+@property (nonatomic, copy) timelineEventBlock eventBlock;
 @property (nonatomic, assign) NSTimeInterval time;
 
-+ (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time WithCompletion:(completionBlock)completionBlock;
++ (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time WithCompletion:(timelineEventBlock)completionBlock;
 
 @end

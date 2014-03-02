@@ -133,22 +133,30 @@ events = _events;
 	if (!self.willLoop)
 		[self stop];
 
+	if (self.completionBlock)
+		self.completionBlock(self);
+
 	if (_delegate && [_delegate respondsToSelector:@selector(finishedTimeLine:)])
 		[_delegate finishedTimeLine:self];
 }
 
 - (void)tick:(NSTimer *)timer
 {
+	NSTimeInterval time = [NSDate timeIntervalSinceReferenceDate] - _startTime;
+	
+	if (self.tickBlock)
+		self.tickBlock(time, self);
+
 	if (_delegate && [_delegate respondsToSelector:@selector(tickAt:forTimeline:)])
-		[_delegate tickAt:[NSDate timeIntervalSinceReferenceDate] - _startTime forTimeline:self];
+		[_delegate tickAt:time forTimeline:self];
 }
 
 - (void)runEvent:(NSTimer *)timer
 {
 	EasyTimelineEvent *event = (EasyTimelineEvent *)timer.userInfo;
 	
-	if (event.completionBlock)
-		event.completionBlock(event, self);
+	if (event.eventBlock)
+		event.eventBlock(event, self);
 }
 
 - (void)setTickPeriod:(NSTimeInterval)tickPeriod

@@ -24,6 +24,10 @@
 	_timeline.tickPeriod	= 0.5;
 	_timeline.delegate		= self;
 
+	_timeline.tickBlock		= ^void (NSTimeInterval time, EasyTimeline *_timeline) {
+		NSLog(@"ticking: %f", time);
+	};
+
 	self.title				= @"5s timeline ticking at 0.5s";
 
     return self;

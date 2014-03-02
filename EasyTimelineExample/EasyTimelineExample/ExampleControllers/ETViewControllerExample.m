@@ -23,6 +23,10 @@
 	_timeline.duration	= 1.0;
 	_timeline.delegate	= self;
 
+	_timeline.completionBlock = ^void (EasyTimeline *_timeline) {
+		NSLog(@"monkey");
+	};
+
 	self.title			= @"Simple 1s test";
 
     return self;

@@ -11,6 +11,9 @@
 
 @class EasyTimeline;
 
+typedef void (^timelineCompletionBlock)(EasyTimeline *timeline);
+typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
+
 @protocol EasyTimelineDelegate <NSObject>
 
 @optional
@@ -45,6 +48,8 @@
 @property (nonatomic, assign) NSTimeInterval tickPeriod; // This is the period (in seconds) in which tickFortimeline: will be called, this can be changed on the fly
 @property (nonatomic, readonly) NSArray *events;
 @property (nonatomic, readonly) NSTimeInterval currentTime;
+@property (nonatomic, copy) timelineCompletionBlock completionBlock;
+@property (nonatomic, copy) timelineTickBlock tickBlock;
 
 #pragma mark Easy Timeline Controllers
 
