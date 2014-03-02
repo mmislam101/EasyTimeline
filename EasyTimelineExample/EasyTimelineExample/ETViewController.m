@@ -82,9 +82,11 @@
 
 		case 4:
 			cell.textLabel.text	= @"10s timeline with events";
+			break;
 
 		case 5:
 			cell.textLabel.text	= @"10s timeline with pause";
+			break;
 
 		default:
 			break;
