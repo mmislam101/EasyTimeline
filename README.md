@@ -7,7 +7,9 @@ When it's just an event 2.0 seconds later, a `performSelector:withObject:afterDe
 
 If it gets a little more complex where you need something happening ever 3.0 seconds, a quick implementation of `NSTimer` is good.
 
-But what if you want something to happen every 2.0 seconds and then at 7.0 seconds something else to happen and you want to pause everything for a while and then go on, etc?
+But what if you want something to happen every 2 seconds and then at the 7th second something else to happen. Or if you want to pause everything for a while and then resume later?
+
+![Easy Timeline Example](http://mmislam101.github.io/easyTimeline/loop_timeline.png)
 
 That's where **Easy Timeline** comes into play.
 
@@ -22,6 +24,8 @@ timeline.duration       = 10.0; // Duration is in seconds. You can even use frac
 ####Warning:
 This is based on NSTImer which has a tolerance level. The [Apple's documenation](https://www.google.com) states:
 >A timer is not a real-time mechanism; it fires only when one of the run loop modes to which the timer has been added is running and able to check if the timer’s firing time has passed. Because of the various input sources a typical run loop manages, the effective resolution of the time interval for a timer is limited to on the order of 50-100 milliseconds. If a timer’s firing time occurs during a long callout or while the run loop is in a mode that is not monitoring the timer, the timer does not fire until the next time the run loop checks the timer. Therefore, the actual time at which the timer fires potentially can be a significant period of time after the scheduled firing time.
+
+You'll see if you run the example project in the output how much the tolerances are.
 
 ###Controls
 
