@@ -17,6 +17,7 @@ typedef void (^timelineEventBlock)(EasyTimelineEvent *event, EasyTimeline *timel
 
 @property (nonatomic, copy) timelineEventBlock eventBlock;
 @property (nonatomic, assign) NSTimeInterval time;
+@property (nonatomic, assign) BOOL willRepeat; // Default to NO
 
 + (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time withEventBlock:(timelineEventBlock)completionBlock;
 

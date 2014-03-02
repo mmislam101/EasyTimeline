@@ -15,6 +15,7 @@
 	EasyTimelineEvent *event	= [[EasyTimelineEvent alloc] init];
 	event.eventBlock			= eventBlock;
 	event.time					= time;
+	event.willRepeat			= NO;
 
 	return event;
 }

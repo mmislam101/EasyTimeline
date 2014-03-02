@@ -23,6 +23,7 @@ events = _events;
 	_events			= [[NSMutableArray alloc] init];
 	_startTime		= 0;
 	_isPaused		= NO;
+	_loop			= 0;
 
     return self;
 }
@@ -45,7 +46,7 @@ events = _events;
 	_startTime	= [NSDate timeIntervalSinceReferenceDate];
 
 	// Do tick timer
-	if (_tickPeriod > 0.0 && self.tickPeriod <= self.duration)
+	if (self.tickPeriod > 0.0 && (self.tickPeriod <= self.duration || self.willLoop))
 	{
 		_tickTimer	= [NSTimer timerWithTimeInterval:self.tickPeriod target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 
@@ -58,11 +59,14 @@ events = _events;
 		_eventTimers = [[NSMutableArray alloc] init];
 		for (EasyTimelineEvent *event in _events)
 		{
-			NSTimer *eventTimer = [NSTimer scheduledTimerWithTimeInterval:event.time
-																   target:self
-																 selector:@selector(runEvent:)
-																 userInfo:event repeats:NO];
-			[_eventTimers addObject:eventTimer];
+			if (event.time > 0.0 && (event.time <= self.duration || self.willLoop))
+			{
+				NSTimer *eventTimer = [NSTimer scheduledTimerWithTimeInterval:event.time
+																	   target:self
+																	 selector:@selector(runEvent:)
+																	 userInfo:event repeats:event.willRepeat];
+				[_eventTimers addObject:eventTimer];
+			}
 		}
 	}
 }
@@ -112,6 +116,7 @@ events = _events;
 	_startTime	= 0;
 	_pausedTime	= 0;
 	_isPaused	= NO;
+	_loop		= 0;
 }
 
 #pragma mark Easy Timeline Events
@@ -126,6 +131,21 @@ events = _events;
 	[_events removeObject:event];
 }
 
+#pragma mark Status
+
+- (NSTimeInterval)currentTime
+{
+	if (_startTime)
+		return [NSDate timeIntervalSinceReferenceDate] - _startTime;
+	else
+		return 0.0;
+}
+
+- (NSInteger)currentLoopCount
+{
+	return _loop;
+}
+
 #pragma mark Helper functions
 
 - (void)finishedTimer:(NSTimer *)timer
@@ -138,6 +158,8 @@ events = _events;
 
 	if (_delegate && [_delegate respondsToSelector:@selector(finishedTimeLine:)])
 		[_delegate finishedTimeLine:self];
+
+	_loop++;
 }
 
 - (void)tick:(NSTimer *)timer
@@ -170,14 +192,6 @@ events = _events;
 
 		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSDefaultRunLoopMode];
 	}
-}
-
-- (NSTimeInterval)currentTime
-{
-	if (_startTime)
-		return [NSDate timeIntervalSinceReferenceDate] - _startTime;
-	else
-		return 0.0;
 }
 
 @end

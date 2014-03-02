@@ -35,6 +35,7 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 	NSMutableArray *_eventTimers;
 
 	BOOL _isPaused;
+	NSInteger _loop;
 	
 	__weak id <EasyTimelineDelegate> _delegate;
 }
@@ -47,9 +48,13 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 @property (nonatomic, assign) BOOL willLoop; // Default to NO
 @property (nonatomic, assign) NSTimeInterval tickPeriod; // This is the period (in seconds) in which tickFortimeline: will be called, this can be changed on the fly
 @property (nonatomic, readonly) NSArray *events;
-@property (nonatomic, readonly) NSTimeInterval currentTime;
 @property (nonatomic, copy) timelineCompletionBlock completionBlock;
 @property (nonatomic, copy) timelineTickBlock tickBlock;
+
+#pragma mark Easy Timeline Status
+
+@property (nonatomic, readonly) NSTimeInterval currentTime;
+@property (nonatomic, readonly) NSInteger currentLoopCount;
 
 #pragma mark Easy Timeline Controllers
 
