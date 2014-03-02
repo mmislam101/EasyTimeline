@@ -33,21 +33,28 @@ Easy Timeline is controlled through the following function calls
 [timeline resume]; // Resume after pausing
 ```
 
+You can also set the timeline to loop by setting the timeline's `willLoop` property to `YES`. By default this is set to `NO`
+
+While Easy Timeline is running you can't really change any of the properties and affect the timeline except for the tickPeriod property. Below in the **Ticks** section there is more explanation. Any changes to other properties such as duration and time of events will not take effect unless you re-start the timeline with `[timeline start]`
+
 ###Completion
 
-Easy Timeline provides the delegate function `(void)finishedTimeLine:(EasyTimeline *)timeline` as well as the block property `timelineCompletionBlock completionBlock` which you can set with a `^void (EasyTimeline *_timeline)` type to execute code when the timeline completes.
+Easy Timeline provides the delegate function `(void)finishedTimeLine:(EasyTimeline *)timeline` as well as the block property `timelineCompletionBlock completionBlock` which you can set with a `^void (EasyTimeline *timeline)` type to execute code when the timeline completes.
 
 ```smalltalk
 
 - (void)init
 {
 ...
-  EasyTimeline *timeline  = [[EasyTimeline alloc] init]
-  timeline.duration       = 10.0;
+  EasyTimeline *timeline  	= [[EasyTimeline alloc] init]
+  timeline.delegate		= self;
+  timeline.duration       	= 10.0;
   
-  _timeline.completionBlock = ^void (EasyTimeline *_timeline) {
+  timeline.completionBlock	= ^void (EasyTimeline *timeline) {
 		NSLog(@"monkey");
 	};
+	
+  [timeline start];
 ...
 }
 
@@ -65,20 +72,24 @@ This would produce the logs "monkey" and then "butt"
 
 Settings the `NSTimeInterval tickPeriod` (as long as the period is less than the duration) will allow you to execute code in periodic timer intervals while Easy Timeline is running.
 
-Easy Timeline provides the delegate function `(void)tickAt:(NSTimeInterval)time forTimeline:(EasyTimeline *)timeline` as well as the block property `timelineTickBlock tickBlock` which you can set with a `^void (NSTimeInterval time, EasyTimeline *_timeline)` type to execute code when the timeline completes.
+This is the only property that can be changed and will take effect *while* the timeline is running. There's an example in the example project to show this behavior.
+
+Easy Timeline provides the delegate function `(void)tickAt:(NSTimeInterval)time forTimeline:(EasyTimeline *)timeline` as well as the block property `timelineTickBlock tickBlock` which you can set with a `^void (NSTimeInterval time, EasyTimeline *timeline)` type to execute code when the timeline completes.
 
 ```smalltalk
-
 - (void)init
 {
 ...
-  EasyTimeline *timeline  = [[EasyTimeline alloc] init]
-  timeline.duration       = 10.0;
-  timeline.tickPeriod	    = 1.0;
+  EasyTimeline *timeline 	= [[EasyTimeline alloc] init]
+  timeline.delegate		= self;
+  timeline.duration       	= 10.0;
+  timeline.tickPeriod	  	= 1.0;
   
-	_timeline.tickBlock		= ^void (NSTimeInterval time, EasyTimeline *_timeline) {
+  timeline.tickBlock	  	= ^void (NSTimeInterval time, EasyTimeline *timeline) {
 		NSLog(@"block tick");
 	};
+	
+  [timeline start];
 ...
 }
 
@@ -94,4 +105,24 @@ This would produce the logs "block tick" and then "delegate tick" periodically t
 
 ###Events
 
-Easy Timeline offers you an ability to add blocks of code to execute at a specific time within
+Easy Timeline offers you an ability to add blocks of code to execute at a specific time within the running of the timeline.
+
+Using the `EasyTimelineEvent` class you can set a time and a execution block and add it to the timeline.
+
+```smalltalk
+- (void)init
+{
+...
+  EasyTimeline *timeline 	= [[EasyTimeline alloc] init]
+  timeline.duration       	= 10.0;
+  
+  [timeline addEvent:[EasyTimelineEvent eventAtTime:3.0 WithCompletion:^(EasyTimelineEvent *event, EasyTimeline *timeline) {
+	NSLog(@"event fired");
+  }]];
+	
+  [timeline start];
+...
+}
+```
+
+will give you a log of "event fired" after 3.0 seconds
