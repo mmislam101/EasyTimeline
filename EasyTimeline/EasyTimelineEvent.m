@@ -10,7 +10,7 @@
 
 @implementation EasyTimelineEvent
 
-+ (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time WithCompletion:(timelineEventBlock)eventBlock
++ (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time withEventBlock:(timelineEventBlock)eventBlock
 {
 	EasyTimelineEvent *event	= [[EasyTimelineEvent alloc] init];
 	event.eventBlock			= eventBlock;

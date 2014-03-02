@@ -18,6 +18,6 @@ typedef void (^timelineEventBlock)(EasyTimelineEvent *event, EasyTimeline *timel
 @property (nonatomic, copy) timelineEventBlock eventBlock;
 @property (nonatomic, assign) NSTimeInterval time;
 
-+ (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time WithCompletion:(timelineEventBlock)completionBlock;
++ (EasyTimelineEvent *)eventAtTime:(NSTimeInterval)time withEventBlock:(timelineEventBlock)completionBlock;
 
 @end

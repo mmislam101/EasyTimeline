@@ -23,7 +23,7 @@
 	_timeline.duration	= 1.0;
 	_timeline.delegate	= self;
 
-	_timeline.completionBlock = ^void (EasyTimeline *_timeline) {
+	_timeline.completionBlock = ^void (EasyTimeline *timeline) {
 		NSLog(@"monkey");
 	};
 

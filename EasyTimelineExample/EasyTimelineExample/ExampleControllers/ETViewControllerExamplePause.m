@@ -24,7 +24,7 @@
 	_timeline.tickPeriod	= 0.5;
 	_timeline.delegate		= self;
 
-	[_timeline addEvent:[EasyTimelineEvent eventAtTime:7.0 WithCompletion:^(EasyTimelineEvent *event, EasyTimeline *timeline) {
+	[_timeline addEvent:[EasyTimelineEvent eventAtTime:7.0 withEventBlock:^(EasyTimelineEvent *event, EasyTimeline *timeline) {
 		_tickView.text = [_tickView.text stringByAppendingString:[NSString stringWithFormat:@"Event fired at %f\n", timeline.currentTime]];
 	}]];
 

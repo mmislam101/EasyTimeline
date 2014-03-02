@@ -24,7 +24,7 @@
 	_timeline.tickPeriod	= 0.5;
 	_timeline.delegate		= self;
 
-	_timeline.tickBlock		= ^void (NSTimeInterval time, EasyTimeline *_timeline) {
+	_timeline.tickBlock		= ^void (NSTimeInterval time, EasyTimeline *timeline) {
 		NSLog(@"ticking: %f", time);
 	};
 
