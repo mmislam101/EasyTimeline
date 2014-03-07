@@ -51,7 +51,7 @@ Easy Timeline provides the delegate function `(void)finishedTimeLine:(EasyTimeli
 {
 ...
   EasyTimeline *timeline  	= [[EasyTimeline alloc] init]
-  timeline.delegate		= self;
+  timeline.delegate			= self;
   timeline.duration       	= 10.0;
   
   timeline.completionBlock	= ^void (EasyTimeline *timeline) {
@@ -85,7 +85,7 @@ Easy Timeline provides the delegate function `(void)tickAt:(NSTimeInterval)time 
 {
 ...
   EasyTimeline *timeline 	= [[EasyTimeline alloc] init]
-  timeline.delegate		= self;
+  timeline.delegate			= self;
   timeline.duration       	= 10.0;
   timeline.tickPeriod	  	= 1.0;
   
