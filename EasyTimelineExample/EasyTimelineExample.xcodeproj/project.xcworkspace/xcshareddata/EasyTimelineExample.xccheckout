@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>973CA067-037D-48DB-A628-61ABB1D5000A</string>
+	<string>945A56A1-B7D5-4FD8-A6A9-5BAB6CBF9856</string>
 	<key>IDESourceControlProjectName</key>
 	<string>EasyTimelineExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>A60785A2-43BB-4DCF-AC8D-BD837B9C6A3B</key>
-		<string>https://github.com/mmislam101/EasyTimeline.git</string>
+		<key>067D7069-18FE-4A9D-BE01-6BF5995AE151</key>
+		<string>https://github.com/siutsin/EasyTimeline.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>EasyTimelineExample/EasyTimelineExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>A60785A2-43BB-4DCF-AC8D-BD837B9C6A3B</key>
+		<key>067D7069-18FE-4A9D-BE01-6BF5995AE151</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/mmislam101/EasyTimeline.git</string>
+	<string>https://github.com/siutsin/EasyTimeline.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>A60785A2-43BB-4DCF-AC8D-BD837B9C6A3B</string>
+	<string>067D7069-18FE-4A9D-BE01-6BF5995AE151</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>A60785A2-43BB-4DCF-AC8D-BD837B9C6A3B</string>
+			<string>067D7069-18FE-4A9D-BE01-6BF5995AE151</string>
 			<key>IDESourceControlWCCName</key>
 			<string>EasyTimeline</string>
 		</dict>
