@@ -54,7 +54,7 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 	NSMutableArray *_events;
 	NSMutableArray *_eventTimers;
 
-	BOOL _isPaused;
+	BOOL _isRunning;
 	NSInteger _loop;
 	
 	__weak id <EasyTimelineDelegate> _delegate;

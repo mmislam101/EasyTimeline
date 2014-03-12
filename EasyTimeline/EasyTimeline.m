@@ -32,7 +32,8 @@
 @implementation EasyTimeline
 
 @synthesize
-events = _events;
+events		= _events,
+isRunning	= _isRunning;
 
 - (id)init
 {
@@ -42,7 +43,7 @@ events = _events;
 	self.willLoop	= NO;
 	_events			= [[NSMutableArray alloc] init];
 	_startTime		= 0;
-	_isPaused		= NO;
+	_isRunning		= NO;
 	_loop			= 0;
 
     return self;
@@ -57,6 +58,8 @@ events = _events;
 
 	// If starting it again, restart from beginning
 	[self stop];
+
+	_isRunning	= YES;
 
 	// Do main timeline timer
 	_mainTimer	= [NSTimer timerWithTimeInterval:_duration target:self selector:@selector(finishedTimer:) userInfo:nil repeats:self.willLoop];
@@ -93,10 +96,10 @@ events = _events;
 
 - (void)pause
 {
-	if (_isPaused && _startTime > 0)
+	if (!_isRunning && _startTime > 0)
 		return;
 
-	_isPaused	= YES;
+	_isRunning	= NO;
 
 	[_mainTimer pauseOrResume];
 	[_tickTimer pauseOrResume];
@@ -109,10 +112,10 @@ events = _events;
 
 - (void)resume
 {
-	if (!_isPaused)
+	if (_isRunning)
 		return;
 
-	_isPaused	= NO;
+	_isRunning	= YES;
 	_startTime	= _startTime + ([NSDate timeIntervalSinceReferenceDate] - _pausedTime);
 
 	[_mainTimer pauseOrResume];
@@ -135,7 +138,7 @@ events = _events;
 
 	_startTime	= 0;
 	_pausedTime	= 0;
-	_isPaused	= NO;
+	_isRunning	= NO;
 	_loop		= 0;
 }
 
@@ -164,14 +167,6 @@ events = _events;
 - (NSInteger)currentLoopCount
 {
 	return _loop;
-}
-
-- (BOOL)isRunning
-{
-	if (_isPaused)
-		return NO;
-
-	return YES;
 }
 
 #pragma mark Helper functions
