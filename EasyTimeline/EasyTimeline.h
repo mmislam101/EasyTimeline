@@ -75,6 +75,7 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 
 @property (nonatomic, readonly) NSTimeInterval currentTime;
 @property (nonatomic, readonly) NSInteger currentLoopCount;
+@property (nonatomic, readonly) BOOL isRunning;
 
 #pragma mark Easy Timeline Controllers
 

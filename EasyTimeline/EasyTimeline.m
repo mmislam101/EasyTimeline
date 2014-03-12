@@ -166,6 +166,14 @@ events = _events;
 	return _loop;
 }
 
+- (BOOL)isRunning
+{
+	if (_isPaused)
+		return NO;
+
+	return YES;
+}
+
 #pragma mark Helper functions
 
 - (void)finishedTimer:(NSTimer *)timer
