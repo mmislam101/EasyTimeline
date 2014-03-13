@@ -46,6 +46,7 @@ While Easy Timeline is running you can't really change any of the properties and
 
 1. You might miss a tick or two after skipping
 2. Skipping over any events will also fire the events immediately
+3. Only use while timeline is running
 
 ###Completion
 
