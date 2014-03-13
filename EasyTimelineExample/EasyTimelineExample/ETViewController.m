@@ -13,6 +13,7 @@
 #import "ETViewControllerExampleSpeed.h"
 #import "ETViewControllerExampleEvents.h"
 #import "ETViewControllerExamplePause.h"
+#import "ETViewControllerExampleSkip.h"
 
 #define tableCellReuse @"tableCellReuse"
 
@@ -50,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,6 +87,10 @@
 
 		case 5:
 			cell.textLabel.text	= @"10s timeline with pause";
+			break;
+
+		case 6:
+			cell.textLabel.text	= @"10s timeline with skip";
 			break;
 
 		default:
@@ -126,6 +131,10 @@
 
 		case 5:
 			[self.navigationController pushViewController:[[ETViewControllerExamplePause alloc] init] animated:YES];
+			break;
+
+		case 6:
+			[self.navigationController pushViewController:[[ETViewControllerExampleSkip alloc] init] animated:YES];
 			break;
 
 		default:

@@ -62,8 +62,7 @@ static void *AssociationKey;
     }
     else
 	{
-        NSTimeInterval interval = [[self fireDate] timeIntervalSinceNow];
-        self.timeDeltaNumber	= @(interval);
+        self.timeDeltaNumber	= @(self.fireDate.timeIntervalSinceNow);
         self.fireDate			= [NSDate distantFuture];
     }
 }

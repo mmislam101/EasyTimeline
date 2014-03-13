@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B61AB8E518D16BDC0043850F /* ETViewControllerExampleSkip.m in Sources */ = {isa = PBXBuildFile; fileRef = B61AB8E418D16BDC0043850F /* ETViewControllerExampleSkip.m */; };
 		B6ACCFB618BF268C00C05868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB518BF268C00C05868 /* Foundation.framework */; };
 		B6ACCFB818BF268C00C05868 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB718BF268C00C05868 /* CoreGraphics.framework */; };
 		B6ACCFBA18BF268C00C05868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ACCFB918BF268C00C05868 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B61AB8E318D16BDC0043850F /* ETViewControllerExampleSkip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETViewControllerExampleSkip.h; sourceTree = "<group>"; };
+		B61AB8E418D16BDC0043850F /* ETViewControllerExampleSkip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETViewControllerExampleSkip.m; sourceTree = "<group>"; };
 		B6ACCFB218BF268C00C05868 /* EasyTimelineExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyTimelineExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6ACCFB518BF268C00C05868 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B6ACCFB718BF268C00C05868 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -207,6 +210,8 @@
 				B6ACCFFF18C0622F00C05868 /* ETViewControllerExampleEvents.m */,
 				B6ACD00718C0810800C05868 /* ETViewControllerExamplePause.h */,
 				B6ACD00818C0810800C05868 /* ETViewControllerExamplePause.m */,
+				B61AB8E318D16BDC0043850F /* ETViewControllerExampleSkip.h */,
+				B61AB8E418D16BDC0043850F /* ETViewControllerExampleSkip.m */,
 			);
 			path = ExampleControllers;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B61AB8E518D16BDC0043850F /* ETViewControllerExampleSkip.m in Sources */,
 				B6ACCFCF18BF268C00C05868 /* ETViewController.m in Sources */,
 				B6ACD00618C07F6700C05868 /* NSTimer+EasyTimeline.m in Sources */,
 				B6ACD00318C0626600C05868 /* EasyTimelineEvent.m in Sources */,

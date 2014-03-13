@@ -117,6 +117,7 @@ isRunning	= _isRunning;
 
 	_isRunning	= YES;
 	_startTime	= _startTime + ([NSDate timeIntervalSinceReferenceDate] - _pausedTime);
+	_pausedTime	= 0;
 
 	[_mainTimer pauseOrResume];
 	[_tickTimer pauseOrResume];
@@ -142,6 +143,31 @@ isRunning	= _isRunning;
 	_loop		= 0;
 }
 
+- (void)skipForwardSeconds:(NSTimeInterval)seconds
+{
+	// If you're skipping past the end of the timeline, finish the timeline
+	if (!self.willLoop && ((self.duration - self.currentTime) <= seconds))
+	{
+		[self stop];
+
+		if (self.completionBlock)
+			self.completionBlock(self);
+
+		if (_delegate && [_delegate respondsToSelector:@selector(finishedTimeLine:)])
+			[_delegate finishedTimeLine:self];
+
+		return;
+	}
+
+	_mainTimer.fireDate = [_mainTimer.fireDate dateByAddingTimeInterval:-seconds];
+	_tickTimer.fireDate = [_mainTimer.fireDate dateByAddingTimeInterval:-seconds];
+
+	for (NSTimer *eventTimer in _eventTimers)
+		eventTimer.fireDate = [eventTimer.fireDate dateByAddingTimeInterval:-seconds];
+
+	_startTime			-= seconds;
+}
+
 #pragma mark Easy Timeline Events
 
 - (void)addEvent:(EasyTimelineEvent *)event
@@ -159,7 +185,7 @@ isRunning	= _isRunning;
 - (NSTimeInterval)currentTime
 {
 	if (_startTime)
-		return [NSDate timeIntervalSinceReferenceDate] - _startTime;
+		return (_pausedTime > 0.0 ? _pausedTime :[NSDate timeIntervalSinceReferenceDate]) - _startTime;
 	else
 		return 0.0;
 }
