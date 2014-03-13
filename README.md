@@ -35,11 +35,17 @@ Easy Timeline is controlled through the following function calls
 [timeline stop]; // Stops the timer and resets it
 [timeline pause]; // Pauses the timer
 [timeline resume]; // Resume after pausing
+[timeline skipForwardSeconds:2.0]; // Skip forward specific seconds
 ```
 
 You can also set the timeline to loop by setting the timeline's `willLoop` property to `YES`. By default this is set to `NO`
 
 While Easy Timeline is running you can't really change any of the properties and affect the timeline except for the tickPeriod property. Below in the **Ticks** section there is more explanation. Any changes to other properties such as duration and time of events will not take effect unless you re-start the timeline with `[timeline start]`
+
+####WARNINGS ABOUT `skipForwardSeconds:`
+
+1. You might miss a tick or two after skipping
+2. Skipping over any events will also fire the events immediately
 
 ###Completion
 
