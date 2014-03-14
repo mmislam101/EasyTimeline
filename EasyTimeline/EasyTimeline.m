@@ -96,7 +96,6 @@ isRunning	= _isRunning;
 
 - (void)pause
 {
-	NSLog(@"pause");
 	if (!_isRunning && _startTime > 0)
 		return;
 
@@ -110,7 +109,6 @@ isRunning	= _isRunning;
 	}];
 
 	_pausedTime	= [NSDate timeIntervalSinceReferenceDate];
-	NSLog(@"paused");
 }
 
 - (void)resume
