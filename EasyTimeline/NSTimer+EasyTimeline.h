@@ -32,6 +32,8 @@
 
 @interface NSTimer (EasyTimeline)
 
+@property (nonatomic, readonly) NSDate *oldFireDate;
+
 - (void)pauseOrResume;
 - (BOOL)isPaused;
 

@@ -29,6 +29,9 @@
 #import "NSTimer+EasyTimeline.h"
 #import <objc/runtime.h>
 
+static void *AssociationKey;
+static void *OldFireDateKey;
+
 @interface NSTimer (EasyTimelinePrivate)
 
 @property (nonatomic) NSNumber *timeDeltaNumber;
@@ -37,16 +40,14 @@
 
 @implementation NSTimer (EasyTimelinePrivate)
 
-static void *AssociationKey;
-
 - (NSNumber *)timeDeltaNumber
 {
-    return objc_getAssociatedObject(self, AssociationKey);
+    return objc_getAssociatedObject(self, &AssociationKey);
 }
 
 - (void)setTimeDeltaNumber:(NSNumber *)timeDeltaNumber
 {
-    objc_setAssociatedObject(self, AssociationKey, timeDeltaNumber, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &AssociationKey, timeDeltaNumber, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
@@ -59,10 +60,12 @@ static void *AssociationKey;
 	{
         self.fireDate			= [[NSDate date] dateByAddingTimeInterval:self.timeDeltaNumber.doubleValue];
         self.timeDeltaNumber	= nil;
+		self.oldFireDate		= nil;
     }
     else
 	{
         self.timeDeltaNumber	= @(self.fireDate.timeIntervalSinceNow);
+		self.oldFireDate		= self.fireDate;
         self.fireDate			= [NSDate distantFuture];
     }
 }
@@ -72,5 +75,19 @@ static void *AssociationKey;
     return (self.timeDeltaNumber != nil);
 }
 
+- (void)setOldFireDate:(NSDate *)oldFireDate
+{
+	objc_setAssociatedObject(self, &OldFireDateKey, oldFireDate, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (NSDate *)oldFireDate
+{
+	NSDate *oldFireDate = objc_getAssociatedObject(self, &OldFireDateKey);
+
+	if (oldFireDate)
+		return oldFireDate;
+
+	return self.fireDate;
+}
 
 @end

@@ -83,9 +83,7 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 - (void)pause;
 - (void)resume;
 - (void)stop;
-- (void)skipForwardSeconds:(NSTimeInterval)seconds; // WARNING 1: Till I fix this, you might miss a tick or two after skipping
-													// WARNING 2: I'm probably not going to ever fix this, but skipping over any events will also fire the events immediately
-													// WARNING 3: Only use while timeline is running
+- (void)skipForwardSeconds:(NSTimeInterval)seconds;
 
 #pragma mark Easy Timeline Events
 
