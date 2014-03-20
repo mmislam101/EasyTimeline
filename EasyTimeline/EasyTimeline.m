@@ -32,8 +32,7 @@
 @implementation EasyTimeline
 
 @synthesize
-events		= _events,
-isRunning	= _isRunning;
+events		= _events;
 
 - (id)init
 {
@@ -46,6 +45,7 @@ isRunning	= _isRunning;
 	_startTime		= 0;
 	_isRunning		= NO;
 	_loop			= 0;
+	_hasStarted		= NO;
 
     return self;
 }
@@ -92,6 +92,8 @@ isRunning	= _isRunning;
 			}
 		}
 	}
+
+	_hasStarted = YES;
 }
 
 - (void)pause
@@ -143,13 +145,19 @@ isRunning	= _isRunning;
 	_pausedTime	= 0;
 	_isRunning	= NO;
 	_loop		= 0;
+	_hasStarted	= NO;
 }
 
 - (void)skipForwardSeconds:(NSTimeInterval)seconds
 {
+	// Don't skip before you start
+	if (_startTime <= 0.0)
+		return;
+
 	// If you're skipping past the end of the timeline, finish the timeline
-	if (!self.willLoop && (_mainTimer.fireDate.timeIntervalSinceReferenceDate - [NSDate timeIntervalSinceReferenceDate] <= seconds))
+	if (!self.willLoop && (_mainTimer.oldFireDate.timeIntervalSinceReferenceDate - [NSDate timeIntervalSinceReferenceDate] <= seconds))
 	{
+		NSLog(@"b");
 		[self stop];
 
 		if (self.completionBlock)

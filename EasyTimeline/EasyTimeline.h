@@ -54,7 +54,6 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 	NSMutableArray *_events;
 	NSMutableArray *_eventTimers;
 
-	BOOL _isRunning;
 	NSInteger _loop;
 	
 	__weak id <EasyTimelineDelegate> _delegate;
@@ -76,6 +75,7 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 @property (nonatomic, readonly) NSTimeInterval currentTime;
 @property (nonatomic, readonly) NSInteger currentLoopCount;
 @property (nonatomic, readonly) BOOL isRunning;
+@property (nonatomic, readonly) BOOL hasStarted;
 
 #pragma mark Easy Timeline Controllers
 
