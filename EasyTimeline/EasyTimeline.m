@@ -157,7 +157,6 @@ events		= _events;
 	// If you're skipping past the end of the timeline, finish the timeline
 	if (!self.willLoop && (_mainTimer.oldFireDate.timeIntervalSinceReferenceDate - [NSDate timeIntervalSinceReferenceDate] <= seconds))
 	{
-		NSLog(@"b");
 		[self stop];
 
 		if (self.completionBlock)
@@ -208,17 +207,24 @@ events		= _events;
 	// Do timers for events
 	if (_events.count > 0)
 	{
-		NSInteger idx	= 0;
 		_eventTimers	= [[NSMutableArray alloc] init];
-		for (EasyTimelineEvent *event in _events)
+
+		for (NSInteger i = 0; i < _events.count; i++)
 		{
-			if (event.time > 0.0)// && (event.time <= self.duration || self.willLoop))
+			EasyTimelineEvent *event = _events[i];
+
+			if (event.time > 0.0)
 			{
 				NSTimer *eventTimer = [NSTimer scheduledTimerWithTimeInterval:event.time
 																	   target:self
 																	 selector:@selector(runEvent:)
 																	 userInfo:event repeats:event.willRepeat];
-				eventTimer.fireDate	= [eventFireDate[idx++] dateByAddingTimeInterval:-seconds];
+				eventTimer.fireDate	= [eventFireDate[i] dateByAddingTimeInterval:-seconds];
+
+				// If the fired time is negative, then don't let it fire ever.
+				if ([eventTimer.fireDate timeIntervalSinceReferenceDate] < 0)
+					eventTimer.fireDate = [NSDate distantFuture];
+
 				[_eventTimers addObject:eventTimer];
 
 				if (_pausedTime > 0.0)
@@ -228,6 +234,13 @@ events		= _events;
 	}
 
 	_startTime -= seconds;
+}
+
+- (void)clear
+{
+	[self stop];
+	[_events removeAllObjects];
+	[_eventTimers removeAllObjects];
 }
 
 #pragma mark Easy Timeline Events

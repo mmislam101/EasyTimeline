@@ -84,6 +84,7 @@ typedef void (^timelineTickBlock)(NSTimeInterval time, EasyTimeline *timeline);
 - (void)resume;
 - (void)stop;
 - (void)skipForwardSeconds:(NSTimeInterval)seconds;
+- (void)clear;
 
 #pragma mark Easy Timeline Events
 
