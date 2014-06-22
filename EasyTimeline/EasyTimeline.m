@@ -50,6 +50,12 @@ events		= _events;
     return self;
 }
 
+- (void)dealloc
+{
+	// Invalidate all the timers when this object is being deallocated.
+	[self stop];
+}
+
 #pragma mark Easy Timeline Controllers
 
 - (void)start
