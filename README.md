@@ -13,6 +13,11 @@ But what if you want something to happen every 2 seconds and then at the 7th sec
 
 That's where **Easy Timeline** comes into play.
 
+###EasyTimeline In Action
+
+Used in the following amazing app that you should totally download:
+- [type-WISE](https://itunes.apple.com/us/app/type-wise-play-with-typefaces/id827605748)
+
 ###Setup
 
 Init with: 
