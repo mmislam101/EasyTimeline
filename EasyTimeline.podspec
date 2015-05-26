@@ -9,7 +9,7 @@ s.description      = <<-DESC
 DESC
 s.homepage         = "https://github.com/mmislam101/EasyTimeline"
 s.license          = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
-s.author           = { "Mohammed Islam" => "mohammed@life360.com" }
+s.author           = { "Mohammed Islam" => "ksitech101@gmail.com" }
 s.source           = { :git => "https://github.com/mmislam101/EasyTimeline.git", :tag => s.version.to_s }
 
 s.platform         = :ios, '6.0'
