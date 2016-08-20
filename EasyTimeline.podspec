@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "EasyTimeline"
-s.version          = "1.0.0"
+s.version          = "1.0.1"
 s.summary          = "Keep track of more complex timing needs for your applications"
 s.description      = <<-DESC
 <p>Sometimes you need things to happen at specific times and things.</p>

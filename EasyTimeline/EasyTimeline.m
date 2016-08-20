@@ -71,7 +71,7 @@ events		= _events;
 	// Do main timeline timer
 	_mainTimer	= [NSTimer timerWithTimeInterval:_duration target:self selector:@selector(finishedTimer:) userInfo:nil repeats:self.willLoop];
 
-	[[NSRunLoop currentRunLoop] addTimer:_mainTimer forMode:NSDefaultRunLoopMode];
+	[[NSRunLoop currentRunLoop] addTimer:_mainTimer forMode:NSRunLoopCommonModes];
 
 	_startTime	= [NSDate timeIntervalSinceReferenceDate];
 
@@ -80,7 +80,7 @@ events		= _events;
 	{
 		_tickTimer	= [NSTimer timerWithTimeInterval:self.tickPeriod target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 
-		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSDefaultRunLoopMode];
+		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSRunLoopCommonModes];
 	}
 
 	// Do timers for events
@@ -192,7 +192,7 @@ events		= _events;
 	_mainTimer			= [NSTimer timerWithTimeInterval:_duration target:self selector:@selector(finishedTimer:) userInfo:nil repeats:self.willLoop];
 	_mainTimer.fireDate	= [mainFireDate dateByAddingTimeInterval:-seconds];
 
-	[[NSRunLoop currentRunLoop] addTimer:_mainTimer forMode:NSDefaultRunLoopMode];
+	[[NSRunLoop currentRunLoop] addTimer:_mainTimer forMode:NSRunLoopCommonModes];
 
 	if (_pausedTime > 0.0)
 		[_mainTimer pauseOrResume];
@@ -204,7 +204,7 @@ events		= _events;
 		_tickTimer			= [NSTimer timerWithTimeInterval:self.tickPeriod target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 		_tickTimer.fireDate	= newTickFireDate;
 
-		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSDefaultRunLoopMode];
+		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSRunLoopCommonModes];
 
 		if (_pausedTime > 0.0)
 			[_tickTimer pauseOrResume];
@@ -320,7 +320,7 @@ events		= _events;
 		[_tickTimer invalidate];
 		_tickTimer	= [NSTimer timerWithTimeInterval:self.tickPeriod target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 
-		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSDefaultRunLoopMode];
+		[[NSRunLoop currentRunLoop] addTimer:_tickTimer forMode:NSRunLoopCommonModes];
 	}
 }
 
