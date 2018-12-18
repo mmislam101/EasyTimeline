@@ -13,29 +13,29 @@ But what if you want something to happen every 2 seconds and then at the 7th sec
 
 That's where **Easy Timeline** comes into play.
 
-#EasyTimeline In Action
+# EasyTimeline In Action
 
 Used in the following amazing app that you should totally download:
 - [type-WISE](https://itunes.apple.com/us/app/type-wise-play-with-typefaces/id827605748)
 
-#Setup
+# Setup
 
-##Cocoapod
+## Cocoapod
 `pod 'EasyTimeline', :git => 'https://github.com/mmislam101/EasyTimeline.git'`
 
-##Manual 
+## Manual 
 ```smalltalk
 EasyTimeline *timeline  = [[EasyTimeline alloc] init]
 timeline.duration       = 10.0; // Duration is in seconds. You can even use fractional seconds, warning below
 ```
 
-#Limitation
+# Limitation
 EasyTimeline is based on NSTImer which has a tolerance level. The [Apple's documenation](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html) states:
 >A timer is not a real-time mechanism; it fires only when one of the run loop modes to which the timer has been added is running and able to check if the timer’s firing time has passed. Because of the various input sources a typical run loop manages, the effective resolution of the time interval for a timer is limited to on the order of 50-100 milliseconds. If a timer’s firing time occurs during a long callout or while the run loop is in a mode that is not monitoring the timer, the timer does not fire until the next time the run loop checks the timer. Therefore, the actual time at which the timer fires potentially can be a significant period of time after the scheduled firing time.
 
 You'll see if you run the example project in the output how much the tolerances are.
 
-#Controls
+# Controls
 
 Easy Timeline is controlled through the following function calls
 ```smalltalk
@@ -50,7 +50,7 @@ You can also set the timeline to loop by setting the timeline's `willLoop` prope
 
 After starting Easy Timeline, you can't really change any of the properties and affect the timeline except for the tickPeriod property, and skipping. Below in the **Ticks** section there is more explanation. Any changes to other properties such as duration and time of events will not take effect unless you re-start the timeline with `[timeline start]`
 
-##Completion
+## Completion
 
 Easy Timeline provides the delegate function `(void)finishedTimeLine:(EasyTimeline *)timeline` as well as the block property `timelineCompletionBlock completionBlock` which you can set with a `^void (EasyTimeline *timeline)` type to execute code when the timeline completes.
 
@@ -81,7 +81,7 @@ Easy Timeline provides the delegate function `(void)finishedTimeLine:(EasyTimeli
 
 This would produce the logs "monkey" and then "butt"
 
-##Ticks
+## Ticks
 
 Settings the `NSTimeInterval tickPeriod` (as long as the period is less than the duration) will allow you to execute code in periodic timer intervals while Easy Timeline is running.
 
@@ -116,7 +116,7 @@ Easy Timeline provides the delegate function `(void)tickAt:(NSTimeInterval)time 
 
 This would produce the logs "block tick" and then "delegate tick" periodically till the timeline finishes
 
-##Events
+## Events
 
 Easy Timeline offers you an ability to add blocks of code to execute at a specific time within the running of the timeline.
 
